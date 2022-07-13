@@ -1,0 +1,71 @@
+<div class="container mt-3">
+  <div class="flex-wrap pt-2 pb-2 mb-3 d-flex justify-content between flex-md-nowrap align-items-center border-bottom">
+      <h1>Book List</h1>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Description</th>
+          <th class="text-center" scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let book of Books; let i = index">
+              <th scope="row">{{book._id}}</th>
+              <td>{{book.name}}</td>
+              <td>{{book.price}}</td>
+              <td>{{book.description}}</td>
+              <td class="gap-2 text-center d-grid d-md-block">
+                <button class="btn btn-sm btn-success" routerLink="/edit-book/?">Add</button>
+                &nbsp;
+                <button class="btn btn-sm btn-primary" routerLink="/edit-book/{{book._id}}">Edit</button>
+                &nbsp;
+                <button class="btn btn-sm btn-danger" (click)="deleteBook(book._id, i)">Delete</button>
+              </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  <!-- User -->
+  <div class="container mt-3">
+    <div class="flex-wrap pt-2 pb-2 mb-3 d-flex justify-content between flex-md-nowrap align-items-center border-bottom">
+        <h1>User List</h1>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Tel</th>
+            <th class="text-center" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of Users; let i = index">
+                <th scope="row">{{user._id}}</th>
+                <td>{{user.email}}</td>
+                <td>{{user.password}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.surname}}</td>
+                <td>{{user.tel}}</td>
+                <td class="text-center">
+                  <button class="btn btn-sm btn-danger" (click)="deleteUser(user._id, i)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+

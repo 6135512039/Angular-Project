@@ -1,0 +1,53 @@
+<div class="container">
+  <h1 class="text-center">Add Data</h1>
+  <div class="mx-auto col-md-4">
+    <div class="card">
+      <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+        <div class="card-body">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" formControlName="name" required>
+          </div>
+          <div class="mt-2 form-group">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" formControlName="price" required>
+          </div>
+          <div class="mt-2 form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" formControlName="description" required>
+          </div>
+        <div class="mt-4 form-group">
+            <button class="btn btn-dark btn-block col-md-12" type="submit">Add Book</button>
+        </div>
+      </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <h1 class="text-center">Update Data</h1>
+    <div class="mx-auto col-md-4">
+      <div class="card">
+        <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+          <div class="card-body">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" formControlName="name" required>
+          </div>
+          <div class="mt-2 form-group">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" formControlName="price" required>
+          </div>
+          <div class="mt-2 form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" formControlName="description" required>
+          </div>
+          <div class="mt-4 form-group">
+              <button class="btn btn-dark btn-block col-md-12" type="submit">Update</button>
+          </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
