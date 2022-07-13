@@ -6,7 +6,8 @@
               <p>{{book.description}}</p>
           </div>
           <div class="card-footer">
-              {{book.price}} บาท
+                  {{book.price}} บาท
+            <p> วันที่เพิ่มหนังสือ: {{book.createdAt| date: "short"  }}</p>
           </div>
       </div>
   </div>
