@@ -18,7 +18,7 @@
           <tr *ngFor="let book of Books; let i = index">
               <th scope="row">{{book._id}}</th>
               <td>{{book.name}}</td>
-              <td>{{book.price}}</td>
+              <td>{{book.price}} บาท</td>
               <td>{{book.description}}</td>
               <td class="gap-2 text-center d-grid d-md-block">
                 <button class="btn btn-sm btn-success" routerLink="/edit-book/?">Add</button>
