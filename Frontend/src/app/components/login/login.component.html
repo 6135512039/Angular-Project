@@ -1,3 +1,18 @@
+<div *ngIf="alertwrong" class="alert alert-danger alert-dismissible fade show" role="alert">
+  Email and Password Wrong!
+  <button (click)="alertClose()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div *ngIf="alertnull" class="alert alert-warning alert-dismissible fade show" role="alert">
+  Please Write Email and Password!
+  <button (click)="alertClose()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div *ngIf="alertsuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+  Login Successfully
+  <button (click)="alertClose()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
 <div class="row">
   <div class="mx-auto col-md-4">
       <div class="card">

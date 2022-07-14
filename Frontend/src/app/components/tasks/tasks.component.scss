@@ -1,0 +1,58 @@
+.pagination {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  color: #000;
+}
+
+.pagination ::ng-deep .ngx-pagination .current {
+  color: #fff;
+  background: #000;
+}
+
+// .pagination ::ng-deep .ngx-pagination .pagination-previous a {
+// }
+
+.pagination ::ng-deep .ngx-pagination .pagination-previous .ng-star-inserted {
+  color: #000;
+}
+
+.pagination ::ng-deep .ngx-pagination .pagination-previous span {
+  color: #000;
+}
+
+.pagination ::ng-deep .ngx-pagination .pagination-previous.disabled {
+  color: #000;
+}
+
+.pagination ::ng-deep .ngx-pagination .pagination-previous a::before,
+.pagination ::ng-deep .ngx-pagination .pagination-previous.disabled::before {
+  font-family: 'Material Icons';
+  content: 'keyboard_arrow_left';
+  vertical-align: top;
+  color: #000;
+}
+
+// .pagination ::ng-deep .ngx-pagination .pagination-next a {
+// }
+
+.pagination ::ng-deep .ngx-pagination .pagination-next .ng-star-inserted {
+  color: #000;
+}
+
+.pagination ::ng-deep .ngx-pagination .pagination-next.disabled {
+  color: #000;
+}
+
+.pagination ::ng-deep .ngx-pagination .pagination-next span {
+  color: #000;
+}
+
+.pagination ::ng-deep .ngx-pagination .pagination-next a::after,
+.pagination ::ng-deep .ngx-pagination .pagination-next.disabled::after {
+  font-family: 'Material Icons';
+  content: 'keyboard_arrow_right';
+  vertical-align: top;
+  color: #000;
+}

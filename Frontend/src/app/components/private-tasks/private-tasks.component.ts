@@ -14,12 +14,25 @@ export class PrivateTasksComponent implements OnInit {
   id: any;
   Users: any = [];
   Books:any = [];
+  updateForm: FormGroup;
+  getid: any;
 
   constructor(
     public formBuilder: FormBuilder,
     private router: Router,
     private ngZone: NgZone,
-    private taskService: TaskService,) {}
+    private taskService: TaskService,) {
+
+
+
+      this.updateForm = this.formBuilder.group({
+        _id:[''],
+        name: [''],
+        price: [''],
+        description: [''],
+        img: ['']
+      })
+    }
 
   ngOnInit(): void {
     this.taskService.GetBooks().subscribe((res: any) =>{
@@ -48,4 +61,5 @@ export class PrivateTasksComponent implements OnInit {
       });
     }
   }
+
 }

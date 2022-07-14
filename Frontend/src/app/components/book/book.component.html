@@ -7,16 +7,20 @@
     <table class="table table-bordered">
       <thead>
         <tr>
+          <th scope="col">ID</th>
           <th scope="col">Name</th>
           <th scope="col">Price</th>
           <th scope="col">Description</th>
+          <th class="w-40 h-45" scope="col">Image</th>
         </tr>
       </thead>
       <tbody>
           <tr *ngFor="let book of Books; let i = index">
+              <th scope="row">{{i+1}}</th>
               <td>{{book.name}}</td>
               <td>{{book.price}} บาท</td>
               <td>{{book.description}}</td>
+              <img class="w-40 h-45" onerror="this.src='https://www.namepros.com/attachments/empty-png.89209/'" src="{{book.img}}" alt="">
           </tr>
       </tbody>
     </table>

@@ -8,6 +8,7 @@
       <thead>
         <tr>
           <th scope="col">ID</th>
+          <th scope="col">ID of Book</th>
           <th scope="col">Name</th>
           <th scope="col">Price</th>
           <th scope="col">Description</th>
@@ -16,14 +17,16 @@
       </thead>
       <tbody>
           <tr *ngFor="let book of Books; let i = index">
-              <th scope="row">{{book._id}}</th>
+
+              <th scope="row">{{i+1}}</th>
+              <td>{{book._id}}</td>
               <td>{{book.name}}</td>
               <td>{{book.price}} บาท</td>
               <td>{{book.description}}</td>
               <td class="gap-2 text-center d-grid d-md-block">
-                <button class="btn btn-sm btn-success" routerLink="/edit-book/?">Add</button>
+                <button class="btn btn-sm btn-success" routerLink="/add-data/?">Add</button>
                 &nbsp;
-                <button class="btn btn-sm btn-primary" routerLink="/edit-book/{{book._id}}">Edit</button>
+                <button class="btn btn-sm btn-primary" routerLink="/add-data/{{book._id}}">Edit</button>
                 &nbsp;
                 <button class="btn btn-sm btn-danger" (click)="deleteBook(book._id, i)">Delete</button>
               </td>
@@ -44,6 +47,7 @@
         <thead>
           <tr>
             <th scope="col">ID</th>
+            <th scope="col">ID of User</th>
             <th scope="col">Email</th>
             <th scope="col">Password</th>
             <th scope="col">Name</th>
@@ -54,7 +58,8 @@
         </thead>
         <tbody>
             <tr *ngFor="let user of Users; let i = index">
-                <th scope="row">{{user._id}}</th>
+                <th scope="row">{{i+1}}</th>
+                <td>{{user._id}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.password}}</td>
                 <td>{{user.name}}</td>
@@ -68,4 +73,8 @@
       </table>
     </div>
   </div>
+
+
+
+
 

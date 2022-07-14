@@ -9,12 +9,13 @@ import { TaskService } from 'src/app/services/task.service';
 export class TasksComponent implements OnInit {
 
   Books: any = [];
+  imagepath: any;
+  p: number = 1;
 
   constructor(private taskService: TaskService) { }
 
   ngOnInit() {
     this.taskService.GetBooks().subscribe(res =>{
-      console.log(res)
       this.Books = res;
       });
   }

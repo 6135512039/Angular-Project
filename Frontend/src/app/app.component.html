@@ -43,8 +43,8 @@
         </ng-container>
 
         <ng-template #loggedIn>
-          <button type="button" class="btn btn-outline-light me-3" style="cursor: pointer;" routerLink="/edit-book/?" routerLinkActive="active">Add Data</button>
-          <button type="button" class="btn btn-outline-light me-3" style="cursor: pointer;" routerLink="/private-add-book" routerLinkActive="active">Admin</button>
+          <button type="button" class="btn btn-outline-light me-3" style="cursor: pointer;" routerLink="/add-data/?" routerLinkActive="active">Add Data</button>
+          <button type="button" class="btn btn-outline-light me-3" style="cursor: pointer;" routerLink="/edit-data" routerLinkActive="active">Edit Data</button>
           <button type="button" class="btn btn-outline-light" style="cursor: pointer;" routerLinkActive="" (click)="logout()">Logout</button>
         </ng-template>
       </ul>
@@ -54,6 +54,6 @@
 </nav>
 
 
-<div class="container p-5">
+<div class="container items-center p-1 ">
   <router-outlet></router-outlet>
 </div>

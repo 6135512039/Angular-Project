@@ -24,12 +24,12 @@ const routes: Routes = [
     component: BookComponent
   },
   {
-    path: 'edit-book/:id',
+    path: 'add-data/:id',
     component: EditBookComponent,
     canActivate: [AuthGuard]
   },
   {
-    path: 'private-add-book',
+    path: 'edit-data',
     component: PrivateTasksComponent,
     canActivate: [AuthGuard]
   },

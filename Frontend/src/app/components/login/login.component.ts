@@ -9,6 +9,10 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
   user: any = {};
+  alertnull:boolean = false;
+  alertwrong:boolean = false;
+  alertsuccess:boolean = false;
+  result: any;
 
   constructor(
     private authService: AuthService,
@@ -19,15 +23,30 @@ export class LoginComponent implements OnInit {
   }
 
   signIn() {
-    this.authService.signInUser(this.user)
+    if(this.user.email == null || this.user.password == null) {
+      this.alertnull = true;
+    }else{
+      this.authService.signInUser(this.user)
       .subscribe(
         res => {
-          console.log(res);
-          localStorage.setItem('token', res.token);
-          this.router.navigate(['/private-add-book']);
+          this.alertsuccess = true;
+          setTimeout(()=>{
+            localStorage.setItem('token', res.token);
+            this.router.navigate(['/edit-data']);
+            }, 2000)
         },
-        err => console.log(err)
-      )
+        (err) => {
+          this.alertwrong = true;
+        }
+      );
+    }
+
+  }
+
+  alertClose() {
+    this.alertnull = false;
+    this.alertwrong = false;
+    this.alertsuccess = false;
   }
 
 }

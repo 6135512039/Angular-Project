@@ -14,6 +14,7 @@ import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { BookComponent } from './components/book/book.component';
 import { EditBookComponent } from './components/edit-book/edit-book.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { EditBookComponent } from './components/edit-book/edit-book.component';
     FormsModule,
     HttpClientModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [
     AuthGuard,
