@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -14,7 +13,7 @@ import { NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 export class RegisterComponent implements OnInit {
   user: any = {};
-  model : NgbDateStruct | undefined;
+  model: any;
 
 
   constructor(
@@ -31,7 +30,10 @@ export class RegisterComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
-          this.router.navigate(['/edit-data']);
+          this.router.navigate(['/edit-data'])
+          .then(() => {
+            window.location.reload();
+          });
         },
         err => console.log(err)
       )

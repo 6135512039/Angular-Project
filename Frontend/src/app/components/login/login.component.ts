@@ -32,7 +32,10 @@ export class LoginComponent implements OnInit {
           this.alertsuccess = true;
           setTimeout(()=>{
             localStorage.setItem('token', res.token);
-            this.router.navigate(['/edit-data']);
+            this.router.navigate(['/edit-data'])
+              .then(() => {
+                window.location.reload();
+              });
             }, 2000)
         },
         (err) => {

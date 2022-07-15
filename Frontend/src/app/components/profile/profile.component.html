@@ -23,7 +23,7 @@
                <label>Age: {{this.User.age}}</label>
               </div>
               <div class="mt-2 form-group">
-                <label>BirthDate: {{this.User.BirthDate.day}} / {{this.User.BirthDate.month}} / {{this.User.BirthDate.year}}</label>
+                <label>BirthDate: {{this.User.BirthDate | date: 'longDate'}}</label>
               </div>
               <div class="mt-2 form-group">
                 <label>Address: {{this.User.address}}</label>
