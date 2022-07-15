@@ -22,10 +22,17 @@
                     <input type="text" [(ngModel)]="user.age" name="age" class="form-control" placeholder="age" required>
                   </div>
                   <div class="pb-4 form-group">
-                    <input type="text" [(ngModel)]="user.sex" name="sex" class="form-control" placeholder="sex" required>
-                  </div>
-                  <div class="pb-4 form-group">
-                    <input type="text" [(ngModel)]="user.BirthDate" name="BirthDate" class="form-control" placeholder="BirthDate" required>
+                    <div class="input-group">
+                      <select class="mr-3 form-select" [(ngModel)]="user.sex" name="sex" aria-label="Default select example">
+                        <option selected>Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="other">other</option>
+                      </select>
+                      <input class="form-control" placeholder="BirthDate"
+                              name="dp" [(ngModel)]="model" ngbDatepicker #date="ngbDatepicker">
+                      <button class="btn btn-outline-secondary bi bi-calendar" (click)="date.toggle()" type="button"></button>
+                    </div>
                   </div>
                   <div class="pb-4 form-group">
                     <input type="text" [(ngModel)]="user.address" name="address" class="form-control" placeholder="Address" required>

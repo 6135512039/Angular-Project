@@ -45,7 +45,11 @@
         <ng-template #loggedIn>
           <button type="button" class="btn btn-outline-light me-3" style="cursor: pointer;" routerLink="/edit-data" routerLinkActive="active">Edit Data</button>
           <button type="button" class="btn btn-outline-light me-3" style="cursor: pointer;" routerLink="/add-data/?" routerLinkActive="active">Add Data</button>
-          <button type="button" class="btn btn-outline-light me-3" style="cursor: pointer;" (click)="profileUser()">Profile</button>
+          <button type="button" class="btn btn-outline-light me-3" style="cursor: pointer;" (click)="profileUser()">
+            <img onerror="this.src='https://e-bugle.com/uploads/empty_user.png'" src="{{this.User.img}}" alt="mdo" width="32" height="32" class="float-left mr-2 rounded-circle">
+            <label>{{this.User.name}}</label>
+            <label *ngIf="this.User.name == null">Null</label>
+          </button>
           <button type="button" class="btn btn-outline-light" style="cursor: pointer;" routerLinkActive="" (click)="logout()">Logout</button>
         </ng-template>
       </ul>

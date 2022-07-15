@@ -12,8 +12,9 @@ import jwt_decode from "jwt-decode";
 })
 export class ProfileComponent implements OnInit {
   getId: any;
-  User: any = [];
+  User: any;
   token: any;
+  BirthDate: any = [];
 
   constructor( private router: Router,
                private ngZone: NgZone,
@@ -36,7 +37,7 @@ export class ProfileComponent implements OnInit {
 
     this.taskService.GetUser(this.getId._id).subscribe(res => {
       this.User = res;
-      console.log(res)
+      console.log('Date', this.User.BirthDate)
     });
 
 

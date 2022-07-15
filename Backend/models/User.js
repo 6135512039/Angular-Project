@@ -10,7 +10,11 @@ const userSchema = new Schema({
     address: String,
     age: String,
     sex: String,
-    BirthDate: String,
+    BirthDate: {
+        year : String,
+        month : String,
+        day : String
+      }
     
 }, {
     timestamps: true

@@ -2,6 +2,7 @@ import { Component, TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import jwt_decode from "jwt-decode";
+import { TaskService } from './services/task.service';
 
 @Component({
   selector: 'app-root',
@@ -14,15 +15,22 @@ export class AppComponent {
   public isMenuCollapsed = true;
   getId: any;
   token: any;
+  User: any;
 
   constructor(
     public authService: AuthService,
+    public taskService: TaskService,
     private router: Router) {
 
     }
   title = 'Frontend';
 
   ngOnInit() {
+    this.token = localStorage.getItem('token')
+    this.getId = jwt_decode(this.token)
+    this.taskService.GetUser(this.getId._id).subscribe(res => {
+      this.User = res;
+    });
   }
 
   profileUser() {

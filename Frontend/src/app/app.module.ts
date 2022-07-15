@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateAdapter, NgbDateNativeAdapter, NgbDatepicker, NgbDateStruct, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,11 @@ import { BookComponent } from './components/book/book.component';
 import { EditBookComponent } from './components/edit-book/edit-book.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ProfileComponent } from './components/profile/profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,13 @@ import { ProfileComponent } from './components/profile/profile.component';
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    MatInputModule,
+
   ],
   providers: [
     AuthGuard,
@@ -43,7 +54,12 @@ import { ProfileComponent } from './components/profile/profile.component';
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi: true
+    },
+    {
+      provide: NgbDateAdapter,
+      useClass: NgbDateNativeAdapter
     }
+
   ],
   bootstrap: [AppComponent]
 })
