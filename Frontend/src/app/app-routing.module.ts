@@ -8,6 +8,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './auth.guard';
 import { BookComponent } from './components/book/book.component';
 import { EditBookComponent } from './components/edit-book/edit-book.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,11 @@ const routes: Routes = [
   {
     path: 'books',
     component: BookComponent
+  },
+  {
+    path: 'profile/:id',
+    component: ProfileComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'add-data/:id',

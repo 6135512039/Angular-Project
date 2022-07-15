@@ -11,6 +11,8 @@
           <th scope="col">Name</th>
           <th scope="col">Price</th>
           <th scope="col">Description</th>
+          <th scope="col">Created Date</th>
+          <th scope="col">Created Time</th>
           <th class="w-40 h-45" scope="col">Image</th>
         </tr>
       </thead>
@@ -20,6 +22,8 @@
               <td>{{book.name}}</td>
               <td>{{book.price}} บาท</td>
               <td>{{book.description}}</td>
+              <td>{{book.createdAt | date: 'shortDate'}}</td>
+              <td>{{book.createdAt | date: 'shortTime'}}</td>
               <img class="w-40 h-45" onerror="this.src='https://www.namepros.com/attachments/empty-png.89209/'" src="{{book.img}}" alt="">
           </tr>
       </tbody>

@@ -43,8 +43,9 @@
         </ng-container>
 
         <ng-template #loggedIn>
-          <button type="button" class="btn btn-outline-light me-3" style="cursor: pointer;" routerLink="/add-data/?" routerLinkActive="active">Add Data</button>
           <button type="button" class="btn btn-outline-light me-3" style="cursor: pointer;" routerLink="/edit-data" routerLinkActive="active">Edit Data</button>
+          <button type="button" class="btn btn-outline-light me-3" style="cursor: pointer;" routerLink="/add-data/?" routerLinkActive="active">Add Data</button>
+          <button type="button" class="btn btn-outline-light me-3" style="cursor: pointer;" (click)="profileUser()">Profile</button>
           <button type="button" class="btn btn-outline-light" style="cursor: pointer;" routerLinkActive="" (click)="logout()">Logout</button>
         </ng-template>
       </ul>

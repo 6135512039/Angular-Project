@@ -15,6 +15,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import { BookComponent } from './components/book/book.component';
 import { EditBookComponent } from './components/edit-book/edit-book.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     LoginComponent,
     RegisterComponent,
     BookComponent,
-    EditBookComponent
+    EditBookComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
