@@ -29,21 +29,32 @@ export class EditBookComponent implements OnInit {
 
     this.getId = this.activatedRoute.snapshot.paramMap.get('id');
     this.taskService.GetBook(this.getId).subscribe(res => {
-      this.updateForm.setValue({
-        id: res['_id'],
-        name: res['name'],
-        price: res['price'],
-        description: res['description'],
-        img: res['img']
-      })
+      if(res['_id'] == undefined || res['_id'] == null) {
+        this.updateForm.setValue({
+          id: null,
+          name: null,
+          price: null,
+          description: null,
+          img: null
+        });
+      } else {
+        this.updateForm.setValue({
+          id: res['_id'],
+          name: res['name'],
+          price: res['price'],
+          description: res['description'],
+          img: res['img']
+        });
+      }
+
     })
     this.updateForm = this.formBuilder.group({
-      id: [''],
+      id: [{value:null, disabled: true}],
       name: [''],
       price: [''],
       description: [''],
       img: ['']
-    })
+    });
 
 
     this.bookForm = this.formBuilder.group({
@@ -52,7 +63,7 @@ export class EditBookComponent implements OnInit {
       price: ['',[Validators.required]],
       description: ['',[Validators.required]],
       img: ['',[Validators.required]]
-    })
+    });
   }
 
   ngOnInit(): void {
