@@ -2,12 +2,12 @@
   <h1 class="text-center">Profile</h1>
   <div class="mx-auto col-md-5">
     <div class="card">
-      <form>
+      <form *ngIf="this.User">
         <div class="card-body">
             <div class="form-group">
               <img class="mx-auto rounded w-60 h-65" onerror="this.src='https://www.namepros.com/attachments/empty-png.89209/'" src="{{this.User.img}}" alt="">
               </div>
-            <div class="mt-2 form-group">
+              <div class="mt-2 form-group">
                 <label>Name: {{this.User.name}}</label>
               </div>
               <div class="mt-2 form-group">

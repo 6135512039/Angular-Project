@@ -21,13 +21,6 @@ export class ProfileComponent implements OnInit {
                private activatedRoute: ActivatedRoute,
                private authService: AuthService,
                private taskService: TaskService,) {
-
-    // this.getId = this.activatedRoute.snapshot.paramMap.get('id');
-    // this.authService.loggedIn()
-
-    // this.authService.getUserProfile(this.getId).subscribe(res => {
-    //   this.User = res.msg;
-    // })
   }
 
   ngOnInit(): void {

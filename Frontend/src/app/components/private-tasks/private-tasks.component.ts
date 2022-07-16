@@ -36,11 +36,9 @@ export class PrivateTasksComponent implements OnInit {
 
   ngOnInit(): void {
     this.taskService.GetBooks().subscribe((res: any) =>{
-      console.log(res)
       this.Books = res;
     })
     this.taskService.GetUsers().subscribe((res: any) =>{
-      console.log(res)
       this.Users = res;
     })
 

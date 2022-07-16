@@ -30,7 +30,7 @@ export class EditBookComponent implements OnInit {
     this.getId = this.activatedRoute.snapshot.paramMap.get('id');
     this.taskService.GetBook(this.getId).subscribe(res => {
       this.updateForm.setValue({
-        _id: res['_id'],
+        id: res['_id'],
         name: res['name'],
         price: res['price'],
         description: res['description'],
@@ -38,7 +38,7 @@ export class EditBookComponent implements OnInit {
       })
     })
     this.updateForm = this.formBuilder.group({
-      _id: {value: null, disabled: true},
+      id: [''],
       name: [''],
       price: [''],
       description: [''],
@@ -47,6 +47,7 @@ export class EditBookComponent implements OnInit {
 
 
     this.bookForm = this.formBuilder.group({
+      id:['',[Validators.required]],
       name: ['',[Validators.required]],
       price: ['',[Validators.required]],
       description: ['',[Validators.required]],
