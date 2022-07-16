@@ -78,8 +78,11 @@ export class EditBookComponent implements OnInit {
         console.log("Data Added Successfully");
         this.alertdatasuccess = true;
         setTimeout(()=>{
-          this.ngZone.run(() => this.router.navigateByUrl('/edit-data'))
-          }, 2000)
+          this.ngZone.run(() => this.router.navigateByUrl('/edit-data')
+          .then (() => {
+            window.location.reload();
+            })
+          )}, 2000)
       }, (err) => {
         console.log(err);
       });
