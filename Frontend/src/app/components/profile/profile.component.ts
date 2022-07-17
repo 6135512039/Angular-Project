@@ -26,30 +26,10 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.token = localStorage.getItem('token')
     this.getId = jwt_decode(this.token)
-    console.log('id',this.getId._id)
 
     this.taskService.GetUser(this.getId._id).subscribe(res => {
       this.User = res;
-      console.log('Date', this.User.BirthDate)
     });
-
-
-
-
-
-
-
-
-
-
-
-    // console.log('User',this.User);
-    // console.log('ID',this.getId);
-    // console.log(jwt_decode(this.token))
-    // console.log('ID',localStorage.getItem('token'));
-    // console.log('token', this.token)
-
-
   }
 
 }
