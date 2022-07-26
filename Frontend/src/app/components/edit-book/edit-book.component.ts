@@ -35,7 +35,9 @@ export class EditBookComponent implements OnInit {
           name: null,
           price: null,
           description: null,
-          img: null
+          img: null,
+          youtubeid: null,
+          movieurl: null
         });
       } else {
         this.updateForm.setValue({
@@ -43,7 +45,9 @@ export class EditBookComponent implements OnInit {
           name: res['name'],
           price: res['price'],
           description: res['description'],
-          img: res['img']
+          img: res['img'],
+          youtubeid: res['youtubeid'],
+          movieurl: res['movieurl']
         });
       }
 
@@ -53,16 +57,19 @@ export class EditBookComponent implements OnInit {
       name: [''],
       price: [''],
       description: [''],
-      img: ['']
+      img: [''],
+      youtubeid: [''],
+      movieurl: ['']
     });
 
 
     this.bookForm = this.formBuilder.group({
-      id:['',[Validators.required]],
       name: ['',[Validators.required]],
       price: ['',[Validators.required]],
       description: ['',[Validators.required]],
-      img: ['',[Validators.required]]
+      img: ['',[Validators.required]],
+      youtubeid: ['', [Validators.required]],
+      movieurl: ['', [Validators.required]]
     });
   }
 

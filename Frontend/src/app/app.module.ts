@@ -22,6 +22,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import { PlaylistComponent } from './components/playlist/playlist.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
+import { SafePipeModule } from 'safe-pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import {MatSelectModule} from '@angular/material/select';
     RegisterComponent,
     BookComponent,
     EditBookComponent,
-    ProfileComponent
+    ProfileComponent,
+    PlaylistComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatFormFieldModule,
     MatNativeDateModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    YouTubePlayerModule,
+    SafePipeModule
   ],
   providers: [
     AuthGuard,

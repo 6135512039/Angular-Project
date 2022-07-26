@@ -1,0 +1,46 @@
+<div class="flex items-center justify-center">
+
+    <div class="mr-4">
+      <div *ngIf="this.Book">
+        <img class="rounded" src="{{this.Book.img}}" height="100%" width="260px">
+      </div>
+    </div>
+
+    <div class="mt-4 mb-4">
+      <div *ngIf="this.Book">
+        <youtube-player videoId="{{this.Book.youtubeid}}"
+          suggestedQuality="highres"
+          [height]="0"
+          [width]="0"
+          [startSeconds]="4"
+          [endSeconds]="300">
+        </youtube-player>
+      </div>
+    </div>
+
+</div>
+
+<div class="mb-2">
+  <iframe *ngIf="this.Book" class="mx-auto"
+    [src]="this.sanitizer.bypassSecurityTrustResourceUrl(this.Book.movieurl)"
+    width="915"
+    height="550"
+    frameborder="0"
+    webkitallowfullscreen
+    mozallowfullscreen
+    allowfullscreen
+    scrolling="no">
+  </iframe>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

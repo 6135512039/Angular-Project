@@ -2,15 +2,13 @@
   <div class="col-md-3" *ngFor="let book of Books | paginate: { itemsPerPage: 4, currentPage: p }; index as i">
       <div class="mb-4 w-60 card">
         <img class="card-img-top" onerror="this.src='https://www.namepros.com/attachments/empty-png.89209/'" style="height: 325px; width: 100%; display: block;" src ="{{book.img}}">
-          <div class="card-body">
-              <h3>{{book.name}}</h3>
-              <p>{{book.description}}</p>
-          </div>
           <div class="card-footer">
-            <p class="pt-2">{{book.price}} บาท</p>
-            <p> หนังสือเล่มที่: {{i+1}}</p>
-            <p> วันที่เพิ่มหนังสือ: {{book.createdAt| date: "shortDate"  }}</p>
-            <p> เวลาที่เพิ่มหนังสือ: {{book.createdAt| date: "shortTime"  }}</p>
+            <a class="pt-4 text-2xl font-semibold text-black no-underline stretched-link" routerLink="/playlist/{{book._id}}">{{book.name}}</a>
+            <p class="pt-2 text-xl">{{book.description}}</p>
+          <div class="text-xs">
+            <p> วันที่เพิ่มหนัง: {{book.createdAt| date: "shortDate"  }}</p>
+            <p> เวลาที่เพิ่มหนัง: {{book.createdAt| date: "shortTime"  }}</p>
+          </div>
           </div>
       </div>
   </div>
