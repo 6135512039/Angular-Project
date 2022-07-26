@@ -1,29 +1,31 @@
-<div class="flex items-center justify-center">
-
-    <div class="mr-4">
+<div class="container">
+ <div class="justify-center row">
+    <div class="mr-4 col-3">
       <div *ngIf="this.Movies">
-        <img class="rounded" src="{{this.Movies.img}}" height="100%" width="260px">
+        <img class="rounded" src="{{this.Movies.img}}" width="320px">
       </div>
     </div>
 
-    <div class="mt-4 mb-4">
+    <div class="col-md-6">
       <div *ngIf="this.Movies">
         <youtube-player videoId="{{this.Movies.youtubeid}}"
           suggestedQuality="highres"
-          [height]="0"
+          [height]="454"
           [width]="0"
           [startSeconds]="4"
           [endSeconds]="300">
         </youtube-player>
       </div>
     </div>
+  </div>
+
 
 </div>
 
-<div class="mb-2">
+<div class="mt-4 mb-2 ml-2">
   <iframe *ngIf="this.Movies" class="mx-auto"
     [src]="this.sanitizer.bypassSecurityTrustResourceUrl(this.Movies.movieurl)"
-    width="915"
+    width="978"
     height="550"
     frameborder="0"
     webkitallowfullscreen
