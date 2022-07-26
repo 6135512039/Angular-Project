@@ -16,7 +16,7 @@ export class EditBookComponent implements OnInit {
   alertdatasuccess:boolean = false;
   alertupdatesuccess:boolean = false;
 
-  bookForm: FormGroup;
+  movieForm: FormGroup;
   updateForm: FormGroup;
   getId: any;
 
@@ -28,12 +28,11 @@ export class EditBookComponent implements OnInit {
                private taskService: TaskService,) {
 
     this.getId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.taskService.GetBook(this.getId).subscribe(res => {
+    this.taskService.GetMovie(this.getId).subscribe(res => {
       if(res['_id'] == undefined || res['_id'] == null) {
         this.updateForm.setValue({
           id: null,
           name: null,
-          price: null,
           description: null,
           img: null,
           youtubeid: null,
@@ -43,7 +42,6 @@ export class EditBookComponent implements OnInit {
         this.updateForm.setValue({
           id: res['_id'],
           name: res['name'],
-          price: res['price'],
           description: res['description'],
           img: res['img'],
           youtubeid: res['youtubeid'],
@@ -55,7 +53,6 @@ export class EditBookComponent implements OnInit {
     this.updateForm = this.formBuilder.group({
       id: [{value:null, disabled: true}],
       name: [''],
-      price: [''],
       description: [''],
       img: [''],
       youtubeid: [''],
@@ -63,9 +60,8 @@ export class EditBookComponent implements OnInit {
     });
 
 
-    this.bookForm = this.formBuilder.group({
+    this.movieForm = this.formBuilder.group({
       name: ['',[Validators.required]],
-      price: ['',[Validators.required]],
       description: ['',[Validators.required]],
       img: ['',[Validators.required]],
       youtubeid: ['', [Validators.required]],
@@ -78,10 +74,10 @@ export class EditBookComponent implements OnInit {
 
 
   onSubmit(): any {
-    if(!this.bookForm.valid) {
+    if(!this.movieForm.valid) {
       this.alertdatanull = true;
     }else{
-      this.taskService.AddBook(this.bookForm.value).subscribe(() => {
+      this.taskService.AddMovie(this.movieForm.value).subscribe(() => {
         console.log("Data Added Successfully");
         this.alertdatasuccess = true;
         setTimeout(()=>{
@@ -101,7 +97,7 @@ export class EditBookComponent implements OnInit {
     if(!this.updateForm.valid) {
       this.alertdatanull2 = true;
     }else{
-      this.taskService.updatedBook(this.getId, this.updateForm.value).subscribe(() => {
+      this.taskService.updatedMovie(this.getId, this.updateForm.value).subscribe(() => {
         console.log('Data Update Successfully');
         this.alertupdatesuccess = true;
         setTimeout(()=>{

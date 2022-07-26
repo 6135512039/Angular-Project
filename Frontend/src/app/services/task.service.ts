@@ -3,7 +3,7 @@ import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
-export class Book {
+export class Movie {
   _id!: String;
   name!: String;
   price!: String;
@@ -29,23 +29,23 @@ export class TaskService {
     return this.http.get<any>(this.URL + '/private-tasks');
   }
 
-  //Add Books
-  AddBook(data: Book): Observable<any> {
+  //Add Movie
+  AddMovie(data: Movie): Observable<any> {
     console.log(data);
-    return this.http.post<any>(this.URL + '/private-add-book', data)
+    return this.http.post<any>(this.URL + '/private-add-movie', data)
       .pipe(
         catchError(this.handleError)
       )
   }
 
-  //Get all Books
-  GetBooks() {
-    return this.http.get<any>(this.URL + '/books');
+  //Get all Movies
+  GetMovies() {
+    return this.http.get<any>(this.URL + '/movies');
   }
 
-  //Get Book By Id
-  GetBook(id: any): Observable<any> {
-    return this.http.get<any>(this.URL + '/books/'+ `${id}`,{ headers: this.httpHeaders })
+  //Get Movie By Id
+  GetMovie(id: any): Observable<any> {
+    return this.http.get<any>(this.URL + '/movies/'+ `${id}`,{ headers: this.httpHeaders })
       .pipe(map((res: any) => {
         return res || {}
       }),
@@ -54,16 +54,16 @@ export class TaskService {
   }
 
   // Update
-  updatedBook(id:any, data:any): Observable<any> {
-    return this.http.put<any>(this.URL+ '/private-update-book/' + `${id}`,data,{ headers: this.httpHeaders })
+  updatedMovie(id:any, data:any): Observable<any> {
+    return this.http.put<any>(this.URL+ '/private-update-movie/' + `${id}`,data,{ headers: this.httpHeaders })
       .pipe(
         catchError(this.handleError)
       )
   }
 
   // Delete
-  deleteBook(id: any): Observable<any> {
-    return this.http.delete<any>(this.URL+ '/private-delete-book/' + `${id}`,{ headers: this.httpHeaders })
+  deleteMovie(id: any): Observable<any> {
+    return this.http.delete<any>(this.URL+ '/private-delete-movie/' + `${id}`,{ headers: this.httpHeaders })
     .pipe(
       catchError(this.handleError)
     )

@@ -5,7 +5,7 @@ const User = require('../models/User');
 
 const jwt = require('jsonwebtoken');
 
-let Book = require('../models/Book');
+let Movie = require('../models/Movie');
 
 router.get('/', (req, res) => {
     res.send('hello')
@@ -78,8 +78,8 @@ router.get('/private-tasks', verifyToken, (req, res) => {
 });
 
 //Get All Books
-router.get('/books',(req, res) => {
-    Book.find((error, data) => {
+router.get('/movies',(req, res) => {
+    Movie.find((error, data) => {
       if (error) {
           return next(error);
       } else {
@@ -90,8 +90,8 @@ router.get('/books',(req, res) => {
 
 
 // Get Books By Id
-router.get('/books/:id', (req, res) => {
-    Book.findById(req.params.id, (error, data) => {
+router.get('/movies/:id', (req, res) => {
+    Movie.findById(req.params.id, (error, data) => {
         if (error) {
             return next(error);
         } else {
@@ -101,8 +101,8 @@ router.get('/books/:id', (req, res) => {
 });
 
 //Add-books
-router.post('/private-add-book', (req, res, next) => {
-    Book.create(req.body, (error, data) => {
+router.post('/private-add-movie', (req, res, next) => {
+    Movie.create(req.body, (error, data) => {
         if (error) {
             return next(error);
         } else {
@@ -112,8 +112,8 @@ router.post('/private-add-book', (req, res, next) => {
 });
 
 // Update book
-router.put('/private-update-book/:id',(req, res, next) => {
-    Book.findByIdAndUpdate(req.params.id, {
+router.put('/private-update-movie/:id',(req, res, next) => {
+    Movie.findByIdAndUpdate(req.params.id, {
       $set: req.body
     }, (error, data) => {
         if (error) {
@@ -121,14 +121,14 @@ router.put('/private-update-book/:id',(req, res, next) => {
           console.log(er)
         } else {
           res.json(data);
-          console.log('Book Updated Successfully')
+          console.log('Movie Updated Successfully')
         }
     })
 });
 
 // Delete book
-router.delete('/private-delete-book/:id',(req, res, next) => {
-  Book.findByIdAndRemove(req.params.id, (error, data) => {
+router.delete('/private-delete-movie/:id',(req, res, next) => {
+  Movie.findByIdAndRemove(req.params.id, (error, data) => {
     if (error) {
         return next(error);
     } else {

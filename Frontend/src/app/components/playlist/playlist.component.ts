@@ -11,7 +11,7 @@ import { TaskService } from 'src/app/services/task.service';
 })
 export class PlaylistComponent implements OnInit {
   getId: any;
-  Book: any = [];
+  Movies: any = [];
 
   constructor(private taskService:TaskService,
               private activatedRoute:ActivatedRoute,
@@ -20,8 +20,8 @@ export class PlaylistComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.taskService.GetBook(this.getId).subscribe(res => {
-    this.Book = res;
+    this.taskService.GetMovie(this.getId).subscribe(res => {
+    this.Movies = res;
     })
   }
 

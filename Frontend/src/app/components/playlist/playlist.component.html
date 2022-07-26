@@ -1,14 +1,14 @@
 <div class="flex items-center justify-center">
 
     <div class="mr-4">
-      <div *ngIf="this.Book">
-        <img class="rounded" src="{{this.Book.img}}" height="100%" width="260px">
+      <div *ngIf="this.Movies">
+        <img class="rounded" src="{{this.Movies.img}}" height="100%" width="260px">
       </div>
     </div>
 
     <div class="mt-4 mb-4">
-      <div *ngIf="this.Book">
-        <youtube-player videoId="{{this.Book.youtubeid}}"
+      <div *ngIf="this.Movies">
+        <youtube-player videoId="{{this.Movies.youtubeid}}"
           suggestedQuality="highres"
           [height]="0"
           [width]="0"
@@ -21,8 +21,8 @@
 </div>
 
 <div class="mb-2">
-  <iframe *ngIf="this.Book" class="mx-auto"
-    [src]="this.sanitizer.bypassSecurityTrustResourceUrl(this.Book.movieurl)"
+  <iframe *ngIf="this.Movies" class="mx-auto"
+    [src]="this.sanitizer.bypassSecurityTrustResourceUrl(this.Movies.movieurl)"
     width="915"
     height="550"
     frameborder="0"

@@ -13,7 +13,7 @@ export class PrivateTasksComponent implements OnInit {
 
   id: any;
   Users: any = [];
-  Books:any = [];
+  Movies:any = [];
   updateForm: FormGroup;
   getid: any;
 
@@ -35,8 +35,8 @@ export class PrivateTasksComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    this.taskService.GetBooks().subscribe((res: any) =>{
-      this.Books = res;
+    this.taskService.GetMovies().subscribe((res: any) =>{
+      this.Movies = res;
     })
     this.taskService.GetUsers().subscribe((res: any) =>{
       this.Users = res;
@@ -44,10 +44,10 @@ export class PrivateTasksComponent implements OnInit {
 
   }
 
-  deleteBook(id:any, i:any) {
+  deleteMovie(id:any, i:any) {
     if (window.confirm('Do you want to go ahead?')) {
-      this.taskService.deleteBook(id).subscribe((res) => {
-        this.Books.splice(i, 1);
+      this.taskService.deleteMovie(id).subscribe((res) => {
+        this.Movies.splice(i, 1);
       });
     }
   }

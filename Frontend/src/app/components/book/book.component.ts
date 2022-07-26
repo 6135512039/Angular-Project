@@ -8,13 +8,13 @@ import { TaskService } from 'src/app/services/task.service';
 })
 export class BookComponent implements OnInit {
 
-  Books:any = [];
+  Movies:any = [];
 
   constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
-    this.taskService.GetBooks().subscribe(res =>{
-      this.Books = res;
+    this.taskService.GetMovies().subscribe(res =>{
+      this.Movies = res;
     })
   }
 }

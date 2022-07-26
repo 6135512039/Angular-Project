@@ -14,15 +14,15 @@ import { PlaylistComponent } from './components/playlist/playlist.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/book-cards',
+    redirectTo: '/movies',
     pathMatch: 'full'
   },
   {
-    path: 'book-cards',
+    path: 'movies',
     component: TasksComponent
   },
   {
-    path: 'books',
+    path: 'movie-list',
     component: BookComponent
   },
   {

@@ -10,7 +10,6 @@
           <th scope="col">ID</th>
           <th scope="col">ID of Book</th>
           <th scope="col">Name</th>
-          <th scope="col">Price</th>
           <th scope="col">Description</th>
           <th scope="col">Created Date</th>
           <th scope="col">Created Time</th>
@@ -19,22 +18,21 @@
         </tr>
       </thead>
       <tbody>
-          <tr *ngFor="let book of Books; let i = index">
+          <tr *ngFor="let movie of Movies; let i = index">
 
               <th scope="row">{{i+1}}</th>
-              <td>{{book._id}}</td>
-              <td>{{book.name}}</td>
-              <td>{{book.price}} บาท</td>
-              <td>{{book.description}}</td>
-              <td>{{book.createdAt | date: 'shortDate'}}</td>
-              <td>{{book.createdAt | date: 'shortTime'}}</td>
-              <td><img class="w-40 h-45" onerror="this.src='https://www.namepros.com/attachments/empty-png.89209/'" src="{{book.img}}" alt=""></td>
+              <td>{{movie._id}}</td>
+              <td>{{movie.name}}</td>
+              <td>{{movie.description}}</td>
+              <td>{{movie.createdAt | date: 'shortDate'}}</td>
+              <td>{{movie.createdAt | date: 'shortTime'}}</td>
+              <td><img class="w-40 h-45" onerror="this.src='https://www.namepros.com/attachments/empty-png.89209/'" src="{{movie.img}}" alt=""></td>
               <td class="gap-2 text-center d-grid d-md-block">
                 <button class="btn btn-sm btn-success" routerLink="/add-data/?">Add</button>
                 &nbsp;
-                <button class="btn btn-sm btn-primary" routerLink="/add-data/{{book._id}}">Edit</button>
+                <button class="btn btn-sm btn-primary" routerLink="/add-data/{{movie._id}}">Edit</button>
                 &nbsp;
-                <button class="btn btn-sm btn-danger" (click)="deleteBook(book._id, i)">Delete</button>
+                <button class="btn btn-sm btn-danger" (click)="deleteMovie(movie._id, i)">Delete</button>
               </td>
           </tr>
       </tbody>

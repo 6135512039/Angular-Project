@@ -2,7 +2,7 @@
   <h1 class="text-center">Add Data</h1>
   <div class="mx-auto col-md-4">
     <div class="card">
-      <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
         <div class="card-body">
           <div *ngIf="alertdatanull" class="alert alert-warning alert-dismissible fade show" role="alert">
             Please Write Data!
@@ -15,10 +15,6 @@
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" formControlName="name" required>
-              </div>
-              <div class="mt-2 form-group">
-                <label for="price">Price</label>
-                <input type="text" class="form-control" formControlName="price" required>
               </div>
               <div class="mt-2 form-group">
                 <label for="description">Description</label>
@@ -60,16 +56,12 @@
               <button (click)="alertClose()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
               <div class="form-group">
-                <label for="name">ID of Book</label>
+                <label for="name">ID of Movie</label>
                 <input type="text" class="form-control" formControlName="id" required>
               </div>
               <div class="mt-2 form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" formControlName="name" required>
-              </div>
-              <div class="mt-2 form-group">
-                <label for="price">Price</label>
-                <input type="text" class="form-control" formControlName="price" required>
               </div>
               <div class="mt-2 form-group">
                 <label for="description">Description</label>
