@@ -1,38 +1,40 @@
-<div class="container">
- <div class="justify-center row">
-    <div class="mr-4 col-3">
-      <div *ngIf="this.Movies">
-        <img class="rounded" src="{{this.Movies.img}}" width="320px">
+<div class="container mt-4 mb-8">
+
+ <div class="items-center justify-center row">
+
+    <div class="col-md-2">
+      <div class="mb-4" *ngIf="this.Movies">
+        <img class="w-64 h-full mx-auto rounded" src="{{this.Movies.img}}">
       </div>
     </div>
 
-    <div class="col-md-6">
-      <div *ngIf="this.Movies">
-        <youtube-player videoId="{{this.Movies.youtubeid}}"
-          suggestedQuality="highres"
-          [height]="454"
-          [width]="0"
-          [startSeconds]="4"
-          [endSeconds]="300">
-        </youtube-player>
+    <div class="col-md-5">
+      <div class="mb-4" *ngIf="this.Movies">
+        <iframe
+        class="w-full rounded"
+        height="290"
+        [src]="this.sanitizer.bypassSecurityTrustResourceUrl(this.Movies.youtubeid)"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
       </div>
     </div>
+
+    <div class="col-md-7">
+      <iframe *ngIf="this.Movies" class="w-full rounded"
+        [src]="this.sanitizer.bypassSecurityTrustResourceUrl(this.Movies.movieurl)"
+        height="418"
+        frameborder="0"
+        allowfullscreen
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        scrolling="no">
+      </iframe>
+    </div>
+
   </div>
 
-
-</div>
-
-<div class="mt-4 mb-2 ml-2">
-  <iframe *ngIf="this.Movies" class="mx-auto"
-    [src]="this.sanitizer.bypassSecurityTrustResourceUrl(this.Movies.movieurl)"
-    width="978"
-    height="550"
-    frameborder="0"
-    webkitallowfullscreen
-    mozallowfullscreen
-    allowfullscreen
-    scrolling="no">
-  </iframe>
 </div>
 
 
