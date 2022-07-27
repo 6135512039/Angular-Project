@@ -1,4 +1,4 @@
-<div class="justify-item-center row">
+<div class="mt-4 justify-item-center row">
   <div class="col-md-3" *ngFor="let movie of Movies | paginate: { itemsPerPage: 4, currentPage: p }; index as i">
       <div class="mb-4 w-60 card">
         <img class="card-img-top" onerror="this.src='https://www.namepros.com/attachments/empty-png.89209/'" style="height: 325px; width: 100%; display: block;" src ="{{movie.img}}">
@@ -12,8 +12,11 @@
           </div>
       </div>
   </div>
-  <pagination-controls class="pagination" prev-icon="chevron_left" next-icon="chevron_right" previousLabel="Previous" nextLabel="Next" (pageChange)="p = $event"></pagination-controls>
 </div>
+
+<footer class="mt-6">
+  <pagination-controls class="pagination" prev-icon="chevron_left" next-icon="chevron_right" previousLabel="Previous" nextLabel="Next" (pageChange)="p = $event"></pagination-controls>
+</footer>
 
 
 
