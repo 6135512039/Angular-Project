@@ -41,21 +41,26 @@
 
       <ul class="ml-auto navbar-nav">
         <ng-container *ngIf="!authService.loggedIn() else loggedIn">
-          <div class="">
-            <button type="button" class="btn btn-outline-light me-3" routerLink="/login" routerLinkActive="active">Login</button>
-            <button type="button" class="btn btn-outline-light" routerLink="/register" routerLinkActive="active">Resgister</button>
-          </div>
+              <button type="button" class="mt-2 mb-2 mr-2 btn btn-outline-light" routerLink="/login" routerLinkActive="active">Login</button>
+              <button type="button" class="mt-2 mb-2 mr-2 btn btn-outline-light" routerLink="/register" routerLinkActive="active">Resgister</button>
         </ng-container>
 
         <ng-template #loggedIn>
-          <button type="button" class="btn btn-outline-light me-3" style="cursor: pointer;" routerLink="/edit-data" routerLinkActive="active">Edit Data</button>
-          <button type="button" class="btn btn-outline-light me-3" style="cursor: pointer;" routerLink="/add-data/?" routerLinkActive="active">Add Data</button>
-          <button type="button" class="btn btn-outline-light me-3" style="cursor: pointer;" (click)="profileUser()">
-            <img *ngIf="this.User" onerror="this.src='https://e-bugle.com/uploads/empty_user.png'" src="{{this.User.img}}" alt="mdo" width="32" height="32" class="float-left mr-2 rounded-circle">
-            <label *ngIf="this.User">{{this.User.name}}</label>
-            <label *ngIf="this.User == null || this.User.name == null">Null</label>
+          <button type="button" class="mt-2 mb-2 mr-2 btn btn-outline-light" style="cursor: pointer;" routerLink="/edit-data" routerLinkActive="active">Edit Data</button>
+          <button type="button" class="mt-2 mb-2 mr-2 btn btn-outline-light" style="cursor: pointer;" routerLink="/add-data/?" routerLinkActive="active">Add Data</button>
+          <button type="button" class="mt-2 mb-2 mr-2 btn btn-outline-light" style="cursor: pointer;" (click)="profileUser()">
+            <div class="row">
+              <div class="col-md-4">
+                <img *ngIf="this.User" onerror="this.src='https://e-bugle.com/uploads/empty_user.png'" src="{{this.User.img}}" alt="mdo" width="32" height="32" class="mx-auto rounded-circle">
+              </div>
+              <div class="col-md-4">
+                <label class="" *ngIf="this.User">{{this.User.name}}</label>
+                <label *ngIf="this.User == null || this.User.name == null">Null</label>
+              </div>
+            </div>
+
           </button>
-          <button type="button" class="btn btn-outline-light" style="cursor: pointer;" routerLinkActive="" (click)="logout()">Logout</button>
+          <button type="button" class="mt-2 mb-2 mr-2 btn btn-outline-light" style="cursor: pointer;" routerLinkActive="" (click)="logout()">Logout</button>
         </ng-template>
       </ul>
 
