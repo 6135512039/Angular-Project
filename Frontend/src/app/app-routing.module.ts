@@ -6,7 +6,7 @@ import { PrivateTasksComponent } from './components/private-tasks/private-tasks.
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './auth.guard';
-import { MovieComponent } from './components/movie/movie.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { EditMovieComponent } from './components/edit-movie/edit-movie.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
@@ -23,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: 'movie-list',
-    component: MovieComponent
+    component: MovieListComponent
   },
   {
     path: 'playlist/:id',

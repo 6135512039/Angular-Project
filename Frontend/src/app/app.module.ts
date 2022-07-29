@@ -12,7 +12,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
-import { MovieComponent } from './components/movie/movie.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { EditMovieComponent } from './components/edit-movie/edit-movie.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -33,7 +33,7 @@ import { SafePipeModule } from 'safe-pipe';
     TasksComponent,
     LoginComponent,
     RegisterComponent,
-    MovieComponent,
+    MovieListComponent,
     EditMovieComponent,
     ProfileComponent,
     PlaylistComponent,

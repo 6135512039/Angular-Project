@@ -33,6 +33,8 @@ export class EditMovieComponent implements OnInit {
         this.updateForm.setValue({
           id: null,
           name: null,
+          fullname: null,
+          language: null,
           description: null,
           img: null,
           youtubeid: null,
@@ -42,6 +44,8 @@ export class EditMovieComponent implements OnInit {
         this.updateForm.setValue({
           id: res['_id'],
           name: res['name'],
+          fullname: res['fullname'],
+          language: res['language'],
           description: res['description'],
           img: res['img'],
           youtubeid: res['youtubeid'],
@@ -53,6 +57,8 @@ export class EditMovieComponent implements OnInit {
     this.updateForm = this.formBuilder.group({
       id: [{value:null, disabled: true}],
       name: [''],
+      fullname: [''],
+      language: [''],
       description: [''],
       img: [''],
       youtubeid: [''],
@@ -62,6 +68,8 @@ export class EditMovieComponent implements OnInit {
 
     this.movieForm = this.formBuilder.group({
       name: ['',[Validators.required]],
+      fullname: ['',[Validators.required]],
+      language: ['',[Validators.required]],
       description: ['',[Validators.required]],
       img: ['',[Validators.required]],
       youtubeid: ['', [Validators.required]],

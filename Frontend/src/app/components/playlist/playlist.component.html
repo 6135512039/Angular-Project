@@ -7,13 +7,13 @@
     </div>
 
     <div class="col-md-2">
-      <div class="mb-4" *ngIf="this.Movies">
+      <div class="mb-2" *ngIf="this.Movies">
         <img class="w-full h-full mx-auto rounded" src="{{this.Movies.img}}">
       </div>
     </div>
 
     <div class="col-md-5">
-      <div class="mb-4" *ngIf="this.Movies">
+      <div class="mb-2" *ngIf="this.Movies">
       <div class="embed-responsive embed-responsive-16by9">
         <iframe class="w-full rounded embed-responsive-item"
                 style="height: 280px;"
@@ -23,10 +23,20 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
                 >
-
         </iframe>
+
       </div>
       </div>
+    </div>
+
+    <div class="col-md-7">
+      <div class="h-full mt-2 mb-3 shadow-sm card">
+        <div class="pt-4 pb-4 pl-4 pr-4 text-left">
+          <h2>เรื่องย่อ</h2>
+          {{this.Movies.description}}
+        </div>
+      </div>
+
     </div>
 
     <div class="col-md-7">

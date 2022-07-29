@@ -5,7 +5,7 @@
           <img class="card-img-top" onerror="this.src='https://www.namepros.com/attachments/empty-png.89209/'" style="height: 325px; width: 100%; display: block;" src ="{{movie.img}}">
             <div class="card-footer">
               <a class="pt-4 text-2xl font-semibold text-black no-underline stretched-link" routerLink="/playlist/{{movie._id}}">{{movie.name}}</a>
-              <p class="pt-2 text-xl">{{movie.description}}</p>
+              <p class="pt-2 text-xl">{{movie.language}}</p>
             <div class="text-xs">
               <p> วันที่เพิ่มหนัง: {{movie.createdAt| date: "shortDate"  }}</p>
               <p> เวลาที่เพิ่มหนัง: {{movie.createdAt| date: "shortTime"  }}</p>

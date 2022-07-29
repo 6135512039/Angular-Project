@@ -1,6 +1,6 @@
 <div class="container mt-3">
   <div class="flex-wrap pt-2 pb-2 mb-3 d-flex justify-content between flex-md-nowrap align-items-center border-bottom">
-      <h1>Book List</h1>
+      <h1>Movie List</h1>
   </div>
 
   <div class="table-responsive">
@@ -28,9 +28,8 @@
               <td>{{movie.createdAt | date: 'shortTime'}}</td>
               <td><img class="w-40 h-45" onerror="this.src='https://www.namepros.com/attachments/empty-png.89209/'" src="{{movie.img}}" alt=""></td>
               <td class="gap-2 text-center d-grid d-md-block">
-                <button class="btn btn-sm btn-primary" routerLink="/add-data/{{movie._id}}">Edit</button>
-                &nbsp;
-                <button class="btn btn-sm btn-danger" (click)="deleteMovie(movie._id, i)">Delete</button>
+                <button class="w-16 mb-2 btn btn-sm btn-primary" routerLink="/add-data/{{movie._id}}">Edit</button>
+                <button class="w-16 btn btn-sm btn-danger" (click)="deleteMovie(movie._id, i)">Delete</button>
               </td>
           </tr>
       </tbody>
