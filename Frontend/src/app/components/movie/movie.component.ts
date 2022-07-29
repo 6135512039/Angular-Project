@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { TaskService } from 'src/app/services/task.service';
 
 @Component({
-  selector: 'app-book',
-  templateUrl: './book.component.html',
-  styleUrls: ['./book.component.scss']
+  selector: 'app-movie',
+  templateUrl: './movie.component.html',
+  styleUrls: ['./movie.component.scss']
 })
-export class BookComponent implements OnInit {
+export class MovieComponent implements OnInit {
 
   Movies:any = [];
 

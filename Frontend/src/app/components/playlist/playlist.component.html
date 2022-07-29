@@ -2,35 +2,47 @@
 
  <div class="items-center justify-center row">
 
+    <div *ngIf="this.Movies" class="text-center">
+      <h1>{{this.Movies.fullname}}</h1>
+    </div>
+
     <div class="col-md-2">
       <div class="mb-4" *ngIf="this.Movies">
-        <img class="w-64 h-full mx-auto rounded" src="{{this.Movies.img}}">
+        <img class="w-full h-full mx-auto rounded" src="{{this.Movies.img}}">
       </div>
     </div>
 
     <div class="col-md-5">
       <div class="mb-4" *ngIf="this.Movies">
-        <iframe
-        class="w-full rounded"
-        height="290"
-        [src]="this.sanitizer.bypassSecurityTrustResourceUrl(this.Movies.youtubeid)"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="w-full rounded embed-responsive-item"
+                style="height: 280px;"
+                [src]="this.sanitizer.bypassSecurityTrustResourceUrl(this.Movies.youtubeid)"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+                >
+
+        </iframe>
+      </div>
       </div>
     </div>
 
     <div class="col-md-7">
-      <iframe *ngIf="this.Movies" class="w-full rounded"
-        [src]="this.sanitizer.bypassSecurityTrustResourceUrl(this.Movies.movieurl)"
-        height="418"
-        frameborder="0"
-        allowfullscreen
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        scrolling="no">
-      </iframe>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe *ngIf="this.Movies" class="w-full rounded embed-responsive-item"
+          [src]="this.sanitizer.bypassSecurityTrustResourceUrl(this.Movies.movieurl)"
+          style="width: 100%; border: none;"
+          height="418"
+          frameborder="0"
+          allowfullscreen
+          webkitallowfullscreen=""
+          mozallowfullscreen=""
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          scrolling="no">
+        </iframe>
+      </div>
     </div>
 
   </div>

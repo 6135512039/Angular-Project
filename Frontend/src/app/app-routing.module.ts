@@ -6,8 +6,8 @@ import { PrivateTasksComponent } from './components/private-tasks/private-tasks.
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './auth.guard';
-import { BookComponent } from './components/book/book.component';
-import { EditBookComponent } from './components/edit-book/edit-book.component';
+import { MovieComponent } from './components/movie/movie.component';
+import { EditMovieComponent } from './components/edit-movie/edit-movie.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
 
@@ -23,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: 'movie-list',
-    component: BookComponent
+    component: MovieComponent
   },
   {
     path: 'playlist/:id',
@@ -36,7 +36,7 @@ const routes: Routes = [
   },
   {
     path: 'add-data/:id',
-    component: EditBookComponent,
+    component: EditMovieComponent,
     canActivate: [AuthGuard]
   },
   {

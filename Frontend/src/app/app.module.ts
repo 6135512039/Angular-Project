@@ -12,8 +12,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
-import { BookComponent } from './components/book/book.component';
-import { EditBookComponent } from './components/edit-book/edit-book.component';
+import { MovieComponent } from './components/movie/movie.component';
+import { EditMovieComponent } from './components/edit-movie/edit-movie.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ProfileComponent } from './components/profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -33,8 +33,8 @@ import { SafePipeModule } from 'safe-pipe';
     TasksComponent,
     LoginComponent,
     RegisterComponent,
-    BookComponent,
-    EditBookComponent,
+    MovieComponent,
+    EditMovieComponent,
     ProfileComponent,
     PlaylistComponent,
   ],

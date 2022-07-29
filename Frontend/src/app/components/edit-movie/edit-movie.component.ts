@@ -4,11 +4,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TaskService } from 'src/app/services/task.service';
 
 @Component({
-  selector: 'app-edit-book',
-  templateUrl: './edit-book.component.html',
-  styleUrls: ['./edit-book.component.scss']
+  selector: 'app-edit-movie',
+  templateUrl: './edit-movie.component.html',
+  styleUrls: ['./edit-movie.component.scss']
 })
-export class EditBookComponent implements OnInit {
+export class EditMovieComponent implements OnInit {
 
   Books: any = [];
   alertdatanull:boolean = false;
